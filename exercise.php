@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE>
 <html>
 <head>
@@ -13,7 +16,6 @@ include "style.php";
 </div>
 <div>
 			<div id="result">
-			<p style="text-align:center"><?php echo $result; ?></p>
 			<p style="text-align:center"><a href="exercise.php">Joaca din nou</a></p>
 			</div>
 			<div class="centrat">
