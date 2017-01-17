@@ -8,7 +8,7 @@
 <div id="heading">
 	<h1>Piatra, Hartie, Foarfeca</h1>
 <?php
-include "final.php";
+include "code.php";
 ?>
 </div>
 <div>

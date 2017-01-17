@@ -1,13 +1,8 @@
 <?php
 function incrementGameByOnePlayer($player){
-    setcookie($player, $_COOKIE[$player] + 1);
-    return true;
-
-}
-
-function incrementGameByOneComputer($player2){
-    setcookie($player2, $_COOKIE[$player2] + 1);
-    return true;
+    $newPlayerScore = $_COOKIE[$player] + 1;
+    setcookie($player, $newPlayerScore);
+    return $newPlayerScore;
 }
 
 function playerWins(){
@@ -25,11 +20,18 @@ function computerWins() {
         return true;
 }
 
-function endOfGameAllPlayers($player, $player2){
+function endOfGameAllPlayers($player, $player2) {
     unset($_COOKIE[$player]);
     setcookie($player, 0);
     unset($_COOKIE[$player2]);
     setcookie($player2, 0);
     return true;
+}
+
+function initializePlayerScore($player) {
+    if (!isset($_COOKIE["$player"])) {
+        setcookie($player, 0);
+    }
+    return $_COOKIE["$player"];
 }
 ?>
