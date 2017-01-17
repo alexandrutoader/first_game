@@ -8,7 +8,7 @@
 <div id="heading">
 	<h1>Piatra, Hartie, Foarfeca</h1>
 <?php
-include "code.php";
+include "final.php";
 ?>
 </div>
 <div>
@@ -24,6 +24,3 @@ include "code.php";
 </div>
 </body>
 </html>
-<?php
-mysqli_close($connection);
-?>
