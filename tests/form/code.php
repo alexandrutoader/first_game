@@ -1,7 +1,7 @@
 <?php
 include "functions.php";
 
-$playerName = 'Gigiel';
+$playerName = 'Gigel';
 $player2Name = 'Calculatorul';
 $playerScore = initializePlayerScore($playerName);
 $player2Score = initializePlayerScore($player2Name);
@@ -22,20 +22,30 @@ if (isset($_GET['choice'])) {
         ($playerOption == $options[2] && $player2Option == $options[3]) ||
         ($playerOption == $options[3] && $player2Option == $options[1])
     ) {
-        echo "Ai castigat runda! <br />";
         if ($_COOKIE[$playerName] == 10) {
-            playerWins();
             endOfGameAllPlayers($playerName, $player2Name);
+            playerWins();
+            $query = "UPDATE scor SET Player = 0";
+            $query = "UPDATE scor SET Computer = 0";
+            $q1 = $db->query($query);
         } else {
             $playerScore = incrementGameByOnePlayer($playerName);
+            echo "Ai castigat runda! <br />";
+            $query = "UPDATE scor SET Player = '$playerScore'";
+            $q1 = $db->query($query);
         }
     } else {
-        echo "Calculatorul a castigat runda. <br />";
         if ($_COOKIE[$player2Name] == 10) {
-            computerWins();
             endOfGameAllPlayers($playerName, $player2Name);
+            computerWins();
+            $query2 = "UPDATE scor SET Computer = 0";
+            $query2 = "UPDATE scor SET Player = 0";
+            $q2 = $db->query($query2);
         } else {
             $player2Score = incrementGameByOnePlayer($player2Name);
+            echo "Calculatorul a castigat runda. <br />";
+            $query2 = "UPDATE scor SET Computer = '$player2Score'";
+            $q2 = $db->query($query2);
         }
     }
     echo $result;
