@@ -10,13 +10,18 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- Dumping database structure for test
+CREATE DATABASE IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `test`;
+
+
 -- Dumping structure for table test.scor
 CREATE TABLE IF NOT EXISTS `scor` (
   `Player` tinyint(50) unsigned DEFAULT NULL,
   `Computer` tinyint(50) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table test.scor: ~0 rows (approximately)
+-- Dumping data for table test.scor: ~1 rows (approximately)
 /*!40000 ALTER TABLE `scor` DISABLE KEYS */;
 INSERT IGNORE INTO `scor` (`Player`, `Computer`) VALUES
 	(4, 3);
